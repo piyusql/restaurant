@@ -1,0 +1,39 @@
+<div>
+<h3> {{ message }} </h3>
+<h3><a href="/" >Check All Bookings</a></h3>
+<form method="post" action="" name="make_booking">
+    {% csrf_token %}
+    <table width="40%" border="1" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="33%" >Guest Name</td>
+          <td width="32%"><input type="text" maxlength="25" class="fields_input" id="guest_name" name="guest_name" value = "{{ guest_name }}" /></td>
+          <td width="35%">&nbsp;</td>
+        </tr>
+         <tr>
+          <td width="33%">Contact No</td>
+          <td width="32%"><input type="text" maxlength="10" class="fields_input" id="contact_no" name="contact_no" value = "{{ contact_no }}" /></td>
+          <td width="35%">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="33%">Guest Count</td>
+          <td width="32%"><input type="text" maxlength="2" class="fields_input" id="guest_count" name="guest_count" value = "{{ guest_count }}" /></td>
+          <td width="35%">&nbsp;</td>
+        </tr>
+        <tr>
+          <td width="33%">Start Time</td>
+          <td width="32%"><input type="text" maxlength="16" class="fields_input" id="start_time" name="start_time" value = "{{ start_time }}" /></td>
+          <td width="35%">(YYYY-MM-DD HH:MM) format</td>
+        </tr>
+        <tr>
+          <td width="33%">End Time</td>
+          <td width="32%"><input type="text" maxlength="16" class="fields_input" id="end_time" name="end_time" value = "{{ end_time }}" /></td>
+          <td width="35%"><span>(YYYY-MM-DD HH:MM) format</span></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td><input type="submit" value="Submit" name="submit" /></td>
+          <td>&nbsp;</td>
+        </tr>
+    </table>
+</form>
+</div>

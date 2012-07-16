@@ -1,0 +1,37 @@
+<title>Restaurant Reservation System</title>
+<h2>Table List</h2>
+<table style="width:20%;" border="1" class="grid">
+        <tr>
+          <th>Table ID</th>
+          <th>Capacity</th>
+        </tr>
+    {% for item in tables %}
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.capacity }} guest</td>
+        </tr>
+    {% endfor %}
+   </table>
+ <h2>Booking List</h2><h3><a href="/make_booking/" >Make Booking</a>
+<table style="width:80%;" border="1" class="grid">
+        <tr>
+          <th>Table ID</th>
+          <th>Guest Name</th>
+          <th>Contact No</th>
+          <th>Scheduled Time</th>
+          <th>End Time</th>
+          <th>Booking Time</th>
+          <th>&nbsp;</th>
+        </tr>
+    {% for item in bookings %}
+        <tr>
+            <td>{{ item.table.id }}</td>
+            <td>{{ item.guest_name }}</td>
+            <td>{{ item.contact_no }}</td>
+            <td>{{ item.start_time }}</td>
+            <td>{{ item.end_time }}</td>
+            <td>{{ item.booking_time }}</td>
+            <td><a href="/release_booking/{{ item.id }}">Release Table</a></td>
+        </tr>
+    {% endfor %}
+</table>
