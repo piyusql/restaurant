@@ -82,12 +82,14 @@ def get_selected_tables(guest_count, start_time, end_time):
     free_tables = get_free_tables(start_time, end_time)
     #simply allot the table as per guest count
     #TO DO : we can choose minimum capacity as per guest count
+    _cap = []
     for id,cap in free_tables:
         if guest_count > 0:
             guest_count = guest_count - cap
             _li.append(id)
+            _cap.append(cap)
         else:
             break
-    if sum(_li) >= guest_count:
+    if sum(_cap) >= guest_count:
         return _li
     return None
