@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 from os.path import dirname, join
-INSTALL_DIR = dirname(__file__)
+INSTALL_DIR = dirname(dirname(__file__))
 print INSTALL_DIR
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -119,7 +119,8 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'restaurant.booking',
+    'booking',
+    'rest_framework',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
